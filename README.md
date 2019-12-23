@@ -50,6 +50,8 @@ Agora você está dentro do container WEB. Gerencie sua aplicação por aqui.
 
 9. Sua aplicação deve estar rodando perfeitamente! Sim?
 
+10. Solicite o .env e eu enviarei, se for do time Arquivei!! :)
+
 ### Para rodas os testes
 
 1. Dentro do container WEB: docker-compose exec web sh
