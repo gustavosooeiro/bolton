@@ -112,7 +112,7 @@ class NfeReceivedController extends Controller
      * @return json
      */
     protected function show($accessKey){
-        return json_encode((float)Nfe::findOrFail($accessKey)->valor);
+        return json_encode(['total' => (float)Nfe::findOrFail($accessKey)->valor]);
     }
 
 
