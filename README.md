@@ -39,13 +39,14 @@ Para instalar a aplicação na máquina local siga os seguintes passos:
 6. Acesse: http://localhost:8000/
 Aplicação deve apresentar uma tela do Laravel!
 
-7. Para finalizar as configurações, execute: docker-compose exec web sh
+7. Para finalizar as configurações, execute: 
+    - docker-compose exec web sh
 
 Agora você está dentro do container WEB. Gerencie sua aplicação por aqui.
 
 8. Dentro do container WEB, execute: 
-    php artisan migrate  #este comando criará as tabelas no banco de dados
-    php artisan testdb:make #este comando criará o seu banco de testes
+    - php artisan migrate  #este comando criará as tabelas no banco de dados
+    - php artisan testdb:make #este comando criará o seu banco de testes
 
 9. Sua aplicação deve estar rodando perfeitamente! Sim?
 
@@ -54,8 +55,8 @@ Agora você está dentro do container WEB. Gerencie sua aplicação por aqui.
 1. Dentro do container WEB: docker-compose exec web sh
 
 2. Execute:
-    /vendor/bin/behat
-    /vendor/phpunit/phpunit/phpunit
+    - /vendor/bin/behat
+    - /vendor/phpunit/phpunit/phpunit
 
     Estes dois rodam testes unitários e comportamentais do sistema.
 
