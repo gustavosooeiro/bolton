@@ -1,28 +1,35 @@
 # Desafio Bolton 
 
-## About Laravel
+## Intro
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O Desafio Bolton foi construído com o objetivo de demonstrar a qualidade do código para solucionar o problema proposto. O problema proposto consiste em desenvolver uma aplicação backend, tendo como requisitos: 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Integrar com a API da arquivei as notas recebidas
+- Gravar dados de cada nota(id, total) em banco de dados relacional
+- Criar um endpoint para consulta de valor de uma nota, dado um id(chave de acesso)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologias utilizadas
 
-## Learning Laravel
+- Docker, Docker Compose
+- PHP, Laravel, Behat, PHPUnit, Guzzle
+- Postgresql
+- Nginx
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalação
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Pré-requisitos
+Para instalar essa aplicação é necessário ter instalado: Docke, Docker Compose. 
+O projeto foi criado com:
+- Docker version 19.03.5, build 633a0ea838
+- docker-compose version 1.25.0, build 0a186604
 
-## Laravel Sponsors
+### Etapas
+Para instalar a aplicação na máquina local siga os seguintes passos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clone este repositório:
+- git clone https://github.com/gustavosooeiro/bolton.git
+
+2. 
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
