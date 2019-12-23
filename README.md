@@ -18,7 +18,7 @@ O Desafio Bolton foi construído com o objetivo de demonstrar a qualidade do có
 ## Instalação
 
 ### Pré-requisitos
-Para instalar essa aplicação é necessário ter instalado: Docke, Docker Compose. 
+Para instalar essa aplicação é necessário ter instalado: composer, Docker, Docker Compose. 
 O projeto foi criado com:
 - Docker version 19.03.5, build 633a0ea838
 - docker-compose version 1.25.0, build 0a186604
@@ -26,57 +26,49 @@ O projeto foi criado com:
 ### Etapas
 Para instalar a aplicação na máquina local siga os seguintes passos:
 
-1. Clone este repositório:
-- git clone https://github.com/gustavosooeiro/bolton.git
+1. git clone https://github.com/gustavosooeiro/bolton.git
 
-2. Execute o docker-compose:
-- docker-compose up -d --build
+2. composer install
 
-3. 
+3. chmod -R 777 ./storage
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+4. mkdir .docker/dbdata
 
-## Contributing
+5. docker-compose up -d --build
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Acesse: http://localhost:8000/
+Aplicação deve apresentar uma tela do Laravel!
 
-## Code of Conduct
+7. Para finalizar as configurações, execute: docker-compose exec web sh
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Agora você está dentro do container WEB. Gerencie sua aplicação por aqui.
 
-## Security Vulnerabilities
+8. Dentro do container WEB, execute: 
+    php artisan migrate  #este comando criará as tabelas no banco de dados
+    php artisan testdb:make #este comando criará o seu banco de testes
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+9. Sua aplicação deve estar rodando perfeitamente! Sim?
 
-## License
+### Para rodas os testes
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# bolton
+1. Dentro do container WEB: docker-compose exec web sh
+
+2. Execute:
+    /vendor/bin/behat
+    /vendor/phpunit/phpunit/phpunit
+
+    Estes dois rodam testes unitários e comportamentais do sistema.
+
+## Uso
+
+Essa aplicação possui duas funcionalidades:
+
+    - Integração:
+        A integração faz a leitura na API da Arquivei das notas recebidas e faz a gravação 
+        no banco de dados de todas as notas.
+        - Acessível em: http://localhost:8000/api/v1/nfes
+
+    - Consulta de valor de NFE:
+        A consulta do valor da nota recebe a Chave de Acesso da nota como parâmetro e retorna o valor total da nota.
+        - Acessível em: http://localhost:8000/api/v1/nfe/{accessKey}
+
