@@ -29,7 +29,10 @@ Para instalar a aplicação na máquina local siga os seguintes passos:
 1. Clone este repositório:
 - git clone https://github.com/gustavosooeiro/bolton.git
 
-2. 
+2. Execute o docker-compose:
+- docker-compose up -d --build
+
+3. 
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
