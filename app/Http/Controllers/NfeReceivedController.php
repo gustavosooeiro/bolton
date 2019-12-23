@@ -11,7 +11,7 @@ use Exception;
 /**
  * Class NfeReceivedController
  * 
- * This class controls the behavior of the operatios for the Nfe's received.
+ * This class controls the behavior of the operatios for the received NFEs.
  * 
  */
 class NfeReceivedController extends Controller
