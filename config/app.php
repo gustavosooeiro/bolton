@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Bolton'),
 
     /*
     |--------------------------------------------------------------------------
@@ -225,7 +225,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'NfeXmlHelper' => App\Helpers\NfeXmlHelper::class,
     ],
+    'x_api_id' => env('API_ID'),
+    'x_api_key' => env('API_KEY'),
+    'uri_nfe_received' => env('NFE_RECEIVED'), 
 
 ];

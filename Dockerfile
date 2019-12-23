@@ -1,6 +1,6 @@
-FROM php:7.3.6-fpm-alpine3.9
+FROM php:7.2-fpm-alpine
 RUN apk add --no-cache openssl bash nodejs npm postgresql-dev
-RUN docker-php-ext-install bcmath pdo pdo_pgsql
+RUN docker-php-ext-install bcmath pdo pdo_pgsql curl
 
 WORKDIR /var/www
 
@@ -15,4 +15,4 @@ RUN chmod -R 777 /var/www/storage
 
 EXPOSE 9000
 
-ENTRYPOINT [ “php-fpm” ]
+ENTRYPOINT [ "php-fpm" ]
