@@ -1,35 +1,38 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Desafio Bolton 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Intro
 
-## About Laravel
+O Desafio Bolton foi construído com o objetivo de demonstrar a qualidade do código para solucionar o problema proposto. O problema proposto consiste em desenvolver uma aplicação backend, tendo como requisitos: 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Integrar com a API da arquivei as notas recebidas
+- Gravar dados de cada nota(id, total) em banco de dados relacional
+- Criar um endpoint para consulta de valor de uma nota, dado um id(chave de acesso)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologias utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Docker, Docker Compose
+- PHP, Laravel, Behat, PHPUnit, Guzzle
+- Postgresql
+- Nginx
 
-## Learning Laravel
+## Instalação
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Pré-requisitos
+Para instalar essa aplicação é necessário ter instalado: Docke, Docker Compose. 
+O projeto foi criado com:
+- Docker version 19.03.5, build 633a0ea838
+- docker-compose version 1.25.0, build 0a186604
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Etapas
+Para instalar a aplicação na máquina local siga os seguintes passos:
 
-## Laravel Sponsors
+1. Clone este repositório:
+- git clone https://github.com/gustavosooeiro/bolton.git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. Execute o docker-compose:
+- docker-compose up -d --build
+
+3. 
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
