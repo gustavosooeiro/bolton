@@ -32,6 +32,7 @@ class NfeReceivedController extends Controller
             'x-api-key' => $this->apiKey
         ];
         $this->valores = [];
+        $this->httpError = [];
     }
     
     /**
@@ -55,7 +56,10 @@ class NfeReceivedController extends Controller
         }catch(Exception $e){
             return json_encode(['error' => $e->getMessage()]);
         }
-        $this->retrieveFromArquiveiAPI($client);    
+        $this->retrieveFromArquiveiAPI($client);  
+        if(count($this->httpError)>0){
+            return json_encode($this->httpError);
+        }
         return $this->store();                
     }
 
@@ -68,9 +72,9 @@ class NfeReceivedController extends Controller
         try{
             $response = $client->request('GET', $this->uri, ['headers' => $this->headers]);
             $statusCode = $response->getStatusCode();
-            if($statusCode <> 200){
-                return json_encode(['error' => 
-                    'Status code ' . $statusCode . ' on ' . $this->uri . '. Please run again.']);    
+            if($statusCode > 200){
+                $this->httpError[$statusCode] = ['error' => 
+                    'Status code ' . $statusCode . ' on ' . $this->uri . '. Please run again.'];
             }
             $body = json_decode($response->getBody()->getContents(), true);
             $notas = $body['data'];
@@ -105,7 +109,7 @@ class NfeReceivedController extends Controller
         }catch(Exception $e){
             return json_encode(['error' => $e->getMessage()]);
         }
-        return json_encode([ 'msg' => 'Foram importados '. $total . ' registros.']);
+        return json_encode([ 'msg' => 'Foram importados '. $total . ' registros.', $this->httpError]);
     }
 
 
