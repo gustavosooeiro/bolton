@@ -68,6 +68,10 @@ class NfeReceivedController extends Controller
         try{
             $response = $client->request('GET', $this->uri, ['headers' => $this->headers]);
             $statusCode = $response->getStatusCode();
+            if($statusCode <> 200){
+                return json_encode(['error' => 
+                    'Status code ' . $statusCode . ' on ' . $this->uri . '. Please run again.']);    
+            }
             $body = json_decode($response->getBody()->getContents(), true);
             $notas = $body['data'];
             foreach($notas as $key => $nota){
@@ -86,7 +90,7 @@ class NfeReceivedController extends Controller
     
     /**
      * Stores the accessKey and total of each NFE into Bolton App Database
-     * @return void
+     * @return json {msg} 
      */
     protected function store(){
         try{
