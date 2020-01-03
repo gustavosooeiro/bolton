@@ -109,7 +109,7 @@ class NfeReceivedController extends Controller
         }catch(Exception $e){
             return json_encode(['error' => $e->getMessage()]);
         }
-        return json_encode([ 'msg' => 'Foram importados '. $total . ' registros.', $this->httpError]);
+        return json_encode([ 'msg' => 'Foram importados '. $total . ' registros.']);
     }
 
 
